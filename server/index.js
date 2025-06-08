@@ -8,13 +8,25 @@ const userRoutes = require('./routes/userRoutes');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+// ✅ Allow both localhost and Netlify
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://passwordresetapk.netlify.app'
+];
+
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
+
 app.use(express.json());
 
-// Log before registering routes:
 console.log('📦 Registering routes from userRoutes.js');
 app.use('/api/users', userRoutes);
 
