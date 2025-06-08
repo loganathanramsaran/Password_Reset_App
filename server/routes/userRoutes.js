@@ -1,18 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { register, login, forgotPassword, resetPassword } = require('../controllers/userController');
+const { register, login, getProfile, forgotPassword, resetPassword } = require('../controllers/userController');
+const { protect } = require('../middlewares/authMiddleware');
 
-// Register
+// Registration and Login
 router.post('/register', register);
-
-// ✅ Login route (was missing)
 router.post('/login', login);
 
-// Forgot password
-router.post('/forgot-password', forgotPassword);
+// Profile Route (Protected)
+router.get('/profile', protect, getProfile); // ✅ must match frontend GET /users/profile
 
-// Reset password
+// Password Reset
+router.post('/forgot-password', forgotPassword);
 router.post('/reset-password/:token', resetPassword);
 
-console.log('🛣️ userRoutes loaded');
 module.exports = router;

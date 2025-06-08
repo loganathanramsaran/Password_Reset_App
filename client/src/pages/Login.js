@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import API from '../api/api'; // ✅ custom axios instance with baseURL
+import API from '../api/api';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -11,13 +11,8 @@ function Login() {
     e.preventDefault();
 
     try {
-      const { data } = await API.post('/users/login', {
-        email,
-        password,
-      });
-
-      // Save token to localStorage
-      localStorage.setItem('token', data.token);
+      const res = await API.post('/users/login', { email, password });
+      localStorage.setItem('token', res.data.token);
 
       alert('Login successful!');
       navigate('/profile');
@@ -25,10 +20,11 @@ function Login() {
       alert(err.response?.data?.message || 'Login failed');
     }
   };
+  console.log('Login API baseURL:', API.defaults.baseURL);
 
   return (
     <div className='login-container text-center'>
-      <img src='/login.png' alt="Login Illustration" className="img-fluid w-25 h-auto mb-3" />
+      <img src='/login.png' alt="Login" className="img-fluid w-25 h-auto mb-3" />
       <h4>Login your Account here!</h4>
 
       <form className='d-flex flex-column justify-content-center mt-5' onSubmit={handleLogin}>

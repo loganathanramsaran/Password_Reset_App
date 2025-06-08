@@ -5,10 +5,14 @@ const Profile = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    API.get('/auth/profile')
-      .then(res => setUser(res.data))
-      .catch(err => console.error(err));
-  }, []);
+  API.get('/users/profile')
+    .then(res => {
+      console.log('👤 Profile response:', res.data); // Inspect this
+      setUser(res.data);
+    })
+    .catch(err => console.error('❌ Error fetching profile:', err));
+}, []);
+
 
   return(
     <div className='profile-container text-center'>
