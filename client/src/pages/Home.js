@@ -1,7 +1,7 @@
 function Home() {
   return (
     <div className="home text-center">
-        <h2>Welcome to the Home Page</h2>
+        <h5 className="mt-4">Welcome to the Home Page</h5>
         <p>Use the navigation links to go to Login, Register, or Profile pages.</p>
         <img src='/main.png' alt="Placeholder" className="img-fluid w-25 h-auto mb-3" />
         <p className="text-muted">This is a simple application to demonstrate user authentication and password reset functionality.</p>

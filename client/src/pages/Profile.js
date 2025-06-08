@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import API from '../api/api';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
   API.get('/users/profile')
@@ -24,9 +26,9 @@ const Profile = () => {
           <p>Email: {user.email}</p>
         </div>
   ) : (
-        <p>Loading profile...</p>
+        <p className='text-danger'>You are not Logged in yet!</p>
       )}
-      <button className='btn btn-sm btn-secondary mt-3' onClick={() => window.location.href = '/'}>Go to Home</button>
+      <a href="#" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Go to Home</a>
     </div>
   );
 };
