@@ -4,6 +4,44 @@ const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const transporter = require('../utils/mailer');
 
+// @route   POST /api/users/login
+// @desc    Authenticate user and return JWT token
+// @access  Public
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email: email.toLowerCase() });
+
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid email or password.' });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Invalid email or password.' });
+    }
+
+    // Optional: generate a token (JWT, or dummy token for now)
+    const token = crypto.randomBytes(20).toString('hex'); // Replace with JWT if needed
+
+    res.status(200).json({
+      message: 'Login successful',
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+      },
+    });
+  } catch (err) {
+    console.error('Login error:', err);
+    res.status(500).json({ message: 'Server error during login.' });
+  }
+};
+
+
 // @route   POST /api/users/register
 // @desc    Register new user
 // @access  Public
