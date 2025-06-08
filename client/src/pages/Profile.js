@@ -10,9 +10,21 @@ const Profile = () => {
       .catch(err => console.error(err));
   }, []);
 
-  return user ? <div>Welcome, {user.name}</div> : <div>Loading...
-    <button className="btn btn-sm btn-info me-2" onClick={() => window.location.href = '/'}>Go to Home</button>
-    </div>;
+  return(
+    <div className='profile-container text-center'>
+      <img src='/profile.png' alt="Profile Illustration" className="img-fluid w-25 h-auto mb-3" />
+      <h4 className=''>Your Profile</h4>
+      {user ? (
+        <div>
+          <p>Name: {user.name}</p>
+          <p>Email: {user.email}</p>
+        </div>
+  ) : (
+        <p>Loading profile...</p>
+      )}
+      <button className='btn btn-sm btn-secondary mt-3' onClick={() => window.location.href = '/'}>Go to Home</button>
+    </div>
+  );
 };
 
 export default Profile;
