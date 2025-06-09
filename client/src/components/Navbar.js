@@ -12,8 +12,9 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-4">
-      <Link className="navbar-brand" to="/">PasswordResetApp
-      <img src='/logo.png' alt='Logo' width='30' height='30' className='d-inline-block  ms-2' />
+      <Link className="navbar-brand" to="/">
+        <img src='/logo.png' alt='Logo' width='45 custom-hover' height='40' className='d-inline-block ' />
+      PasswordResetApp
       </Link>
       <button
         className="navbar-toggler"
@@ -30,15 +31,15 @@ function Navbar() {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ms-auto align-items-center">
           <li className="nav-item">
-            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link custom-hover" to="/">Home</Link>
           </li>
           {!token && (
             <>
               <li className="nav-item">
-                <Link className="nav-link" to="/register">Register</Link>
+                <Link className="nav-link custom-hover" to="/register">Register</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">Login</Link>
+                <Link className="nav-link custom-hover" to="/login">Login</Link>
               </li>
             </>
           )}
