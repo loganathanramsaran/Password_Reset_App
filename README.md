@@ -54,7 +54,7 @@ password-reset-app/
 
 ## 📦 Installation
 
-### 1. Clone the Repo
+###Clone the Repo
 
 ```bash
 git clone https://github.com/your-username/password-reset-app.git
@@ -79,6 +79,7 @@ npm run dev
 cd ../client
 npm install
 npm start
+---
 
 📝 License
 This project is licensed under the MIT License.
