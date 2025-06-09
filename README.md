@@ -108,7 +108,7 @@ This project is licensed under the MIT License.
 
 #### For Live Demo Click the Below Link ⬇️ <br/>
 
-🌐 Live URL : [https://password-reset-app-server.onrender.com]
+🌐 Live URL : [[https://password-reset-app-server.onrender.com]](https://password-reset-app-server.onrender.com)
 
 ---
 
