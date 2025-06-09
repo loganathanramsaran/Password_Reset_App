@@ -49,9 +49,7 @@ password-reset-app/
 │   ├── server.js               # Main server entry
 │   └── package.json
 │
-├── README.md
-└── postman_collection.json     # Postman API documentation
-
+├── README.me
 
 
 ---
