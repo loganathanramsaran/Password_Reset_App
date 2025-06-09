@@ -65,7 +65,61 @@ This project is licensed under the MIT License.
 - React
 
 - Bootstrap
+---
+## 📊 Data
+---
 
+## API Endpoints 📮
+
+| Method | Endpoint                    | Description                  | Access       | Response                           |
+|--------|-----------------------------|------------------------------|--------------|------------------------------------|
+| POST   | `/api/auth/register`        | Register New User            | 🌐 Public    | ✅ JWT token / ❌ Error           |
+| POST   | `/api/auth/login`           | Login Existing User          | 🌐 Public    | ✅ Success / ❌ Error             |
+| POST   | `/api/users/forgot-passwprd`| Forgot user password         | 🌐 Public    | ✅ Rest Url by email/ ❌ Error    |
+| POST   | `/api/users/reset-passwprd` | Reset user password          | 🌐 Public    | ✅ Update New Password/ ❌ Error  |
+| GET    | `/api/users/profile`        | Get User Profile using token | 🔐 Private   | 🔐 User Details / ❌ Error        |
+---
+
+## Configuration Settings
+
+| Setting       | Description                                  | Default Value |
+| :------------ | :------------------------------------------- | :------------ |
+| `PORT`        | Port number for the client to listen on.     | `3000`        |
+| `PORT`        | Port number for the server to listen on.     | `4000`        |
+| `MONGO_URI`   | Connection string for the MongoDB database.  | `(required)`  |
+| `JWT_SECRET`  | Secret key used for signing JWTs.            | `(required)`  |
+
+## API Response Codes
+
+| Status Code | Description           |
+| :---------- | :-------------------- |
+| `200 OK`    | Request successful.   |
+| `201 Created` | Resource created.     |
+| `400 Bad Request` | Invalid input.        |
+| `401 Unauthorized` | Authentication failed. |
+| `500 Internal Server Error` | Server encountered an error. |
+
+--
+
+## Deployed App 🚀
+
+#### For Live Demo Click the Below Link ⬇️ <br/>
+
+🌐 Live URL : [https://password-reset-app-server.onrender.com]
+
+---
+
+#### Explore the authApp endpoints using Postman ⬇️ <br/>
+
+## 📬 Postman Collection
+
+You can test all API endpoints using the Postman collection below:
+
+🔗 [View in Postman] [https://loganathanc-7436853.postman.co/workspace/Loganathan-C's-Workspace~3f55cebb-894f-406b-8650-cd297ae5e97d/collection/44466576-3a505590-dea0-40c5-b71d-c846c2b9ca39?action=share&creator=44466576]
+
+
+
+---
 
 
 ## 📦 Installation
