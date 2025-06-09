@@ -11,8 +11,10 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <Link className="navbar-brand" to="/">PasswordResetApp</Link>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-4">
+      <Link className="navbar-brand" to="/">PasswordResetApp
+      <img src='/logo.png' alt='Logo' width='30' height='30' className='d-inline-block  ms-2' />
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
