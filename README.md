@@ -30,24 +30,28 @@ A full-stack **user authentication** and **password reset** system built with **
 ## 📂 Folder Structure
 
 password-reset-app/
-├── client/ # React Frontend
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── api/
-│ │ ├── App.js
-│ │ └── index.js
-│ └── package.json
-├── server/ # Node Backend
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── utils/
-│ ├── server.js
-│ └── .env
-├── .gitignore
+├── client/                      # React frontend
+│   ├── public/                 
+│   └── src/
+│       ├── api/                # Axios API service
+│       ├── components/         # React components (Login, Register, ResetPassword, etc.)
+│       ├── pages/              # Page components (Home, Profile, etc.)
+│       ├── App.js
+│       └── index.js
+│
+├── server/                     # Express backend
+│   ├── controllers/            # Controller logic (login, register, reset, profile)
+│   ├── middleware/             # Auth middleware (JWT token verification)
+│   ├── models/                 # Mongoose models (User schema)
+│   ├── routes/                 # API route handlers
+│   ├── utils/                  # Mailer config (Mailtrap)
+│   ├── .env                    # Environment variables
+│   ├── server.js               # Main server entry
+│   └── package.json
+│
 ├── README.md
-└── package.json
+└── postman_collection.json     # Postman API documentation
+
 
 
 ---
