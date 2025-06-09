@@ -29,7 +29,8 @@ A full-stack **user authentication** and **password reset** system built with **
 
 ## 📂 Folder Structure
 
-###password-reset-app/
+```bash
+password-reset-app/
 ├── client/                      # React frontend
 │   ├── public/                 
 │   └── src/
@@ -51,7 +52,7 @@ A full-stack **user authentication** and **password reset** system built with **
 │
 ├── README.me
 
-
+```
 ---
 
 📝 License
