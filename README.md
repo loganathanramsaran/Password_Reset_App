@@ -52,6 +52,22 @@ password-reset-app/
 
 ---
 
+📝 License
+This project is licensed under the MIT License.
+
+❤️ Acknowledgements
+- Node.js
+
+- MongoDB Atlas
+
+- Mailtrap
+
+- React
+
+- Bootstrap
+
+
+
 ## 📦 Installation
 
 ###Clone the Repo
@@ -80,18 +96,3 @@ cd ../client
 npm install
 npm start
 ---
-
-📝 License
-This project is licensed under the MIT License.
-
-❤️ Acknowledgements
-- Node.js
-
-- MongoDB Atlas
-
-- Mailtrap
-
-- React
-
-- Bootstrap
-
