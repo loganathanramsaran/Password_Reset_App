@@ -29,7 +29,7 @@ A full-stack **user authentication** and **password reset** system built with **
 
 ## 📂 Folder Structure
 
-password-reset-app/
+###password-reset-app/
 ├── client/                      # React frontend
 │   ├── public/                 
 │   └── src/
@@ -62,7 +62,7 @@ This project is licensed under the MIT License.
 
 - MongoDB Atlas
 
-- Mailtrap
+- Mailtrap - for test
 
 - React
 
@@ -140,8 +140,8 @@ Create a .env file inside /server:
 PORT=4000
 MONGO_URI=your_mongodb_connection_uri
 JWT_SECRET=your_secret_key
-EMAIL_USER=your_mailtrap_email
-EMAIL_PASS=your_mailtrap_password
+EMAIL_USER=your_user_email
+EMAIL_PASS=your_user_password
 BASE_CLIENT_URL=http://localhost:3000
 
 #Then start the backend:
