@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Savate:ital,wght@0,200..900;1,200..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
 .animate-running {
   display: inline-block;
   white-space: nowrap;
@@ -14,12 +16,60 @@
 }
 
 .github-link {
-  color: #0d6efd;
+  color: #1d74f7;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .github-link:hover {
   text-decoration: underline;
-  color: #0a58ca;
+  color: #014bbb;
+}
+
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.custom-hover {
+    padding: 0px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+
+.custom-hover:hover {
+    border-bottom: 2px solid #ffffff;
+    color: #ffe816;
+  }
+
+.custom-hover.nav-link {
+    color: #fff;
+  }
+
+.navbar .navbar-brand {
+  font-family: "Righteous", sans-serif;
+  font-style: normal;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-brand:hover {
+  color: #000000; /* Change to any hover color you want */
+  text-decoration: none;
+}
+
+.headline{
+  font-family: "Savate", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 3rem;
 }

@@ -24,7 +24,7 @@ function Login() {
 
   return (
     <div className='login-container text-center'>
-      <img src='/login.png' alt="Login" className="img-fluid w-25 h-auto mb-3" />
+      <img src='/login.png' alt="Login" className="img-fluid w-25 h-auto mb-1" />
       <h4>Login your Account here!</h4>
 
       <form className='d-flex flex-column justify-content-center mt-5' onSubmit={handleLogin}>

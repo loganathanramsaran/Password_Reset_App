@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './Home.css'
 
 function Navbar() {
   const navigate = useNavigate();
@@ -11,13 +12,18 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-4">
-      <Link className="navbar-brand" to="/">
-        <img src='/logo.png' alt='Logo' width='45 custom-hover' height='40' className='d-inline-block ' />
-      PasswordResetApp
-      </Link>
+    <nav className="navbar navbar-expand-lg bg-primary px-4">
+    <Link className="navbar-brand d-flex align-items-center" to="/">
+    <img
+      src="/logo.png"
+      alt="Logo"
+      width="40"
+      className="d-inline-block me-1"
+    />
+    <span className="brand-text">PasswordResetApp</span>
+    </Link>
       <button
-        className="navbar-toggler"
+        className="navbar-toggler "
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
@@ -25,7 +31,7 @@ function Navbar() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon" ></span>
       </button>
 
       <div className="collapse navbar-collapse" id="navbarNav">

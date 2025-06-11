@@ -38,9 +38,12 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="container mt-5" style={{ maxWidth: '500px' }}>
+    <div className="container text-center mt-5" style={{ maxWidth: '500px' }}>
       <h2 className="text-center mb-4">Forgot Password</h2>
       <form onSubmit={handleSubmit}>
+        <div className='forgot-img mb-3'>
+          <img src='/forgot.png' alt="Forgot Password" className="img-fluid w-50 mx-auto mb-3" />
+        </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Enter your registered email

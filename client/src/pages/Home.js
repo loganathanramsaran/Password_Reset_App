@@ -1,19 +1,43 @@
 import { Link } from 'react-router-dom';
 import '../components/Home.css'; // Import custom styles for Home component
+import { useEffect, useState } from 'react';
+import API from '../api/api';
 
 function Home() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+  API.get('/users/profile')
+    .then(res => {
+      console.log('👤 Profile response:', res.data); // Inspect this
+      setUser(res.data);
+    })
+    .catch(err => console.error('❌ Error fetching profile:', err));
+}, []);
+
   return (
-    <div className="container text-center mt-5 home">
-      <h3 className="text-primary mb-3">Welcome to the Home Page</h3>
-      <p className="text-muted">
+    <div className="home-container text-center  mx-auto mt-4">
+      <h3 className="headline text-primary">
+        {user ? (
+          <>
+            Welcome, <span className="text-info">{user.name}</span>
+         </>
+        ) : (
+          'Welcome!'
+        )}
+      </h3>
+      <p className="text-primary">
         Use the navigation links to go to Login, Register, or Profile pages.
       </p>
+      <div className="home-image ">
+        <img src="/home.png" alt="Home Icon" className="img-fluid w-25 " />
+      </div>
 
-      <img src="/main.png" alt="Placeholder" className="w-25 mb-4" />
-
-      <p className="text-muted animate-running">
+<section className='bg-primary'>        
+      <p className=" text-white fw-semibold mb-0 animate-running ">
         This is a simple application to demonstrate user authentication and password reset functionality.
-      </p>
+        </p>
+      </section>
 
       <div className="button-group my-4 d-flex justify-content-center flex-wrap gap-2">
         <Link to="/login" className="btn btn-sm btn-primary">Go to Login</Link>
