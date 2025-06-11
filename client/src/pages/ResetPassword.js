@@ -64,6 +64,7 @@ function ResetPassword() {
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
             required
+            autoComplete="new-password"
           />
         </div>
 
@@ -76,6 +77,7 @@ function ResetPassword() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
+            autoComplete="new-password"
           />
         </div>
 
