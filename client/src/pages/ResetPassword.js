@@ -18,30 +18,26 @@ function ResetPassword() {
     setError('');
 
     if (newPassword !== confirmPassword) {
-      setError("Passwords do not match.");
+      setError('Passwords do not match.');
       return;
     }
 
     if (newPassword.length < 6) {
-      setError("Password must be at least 6 characters.");
+      setError('Password must be at least 6 characters.');
       return;
     }
 
     setLoading(true);
     try {
       const response = await axios.post(
-  `${process.env.REACT_APP_API_BASE_URL}/users/forgot-password`,
-  { email }
-);
-
+        `${process.env.REACT_APP_API_BASE_URL}/users/reset-password/${token}`,
+        { newPassword }
+      );
 
       setMessage(response.data.message || 'Password reset successful.');
-      setError('');
-
       setTimeout(() => navigate('/login'), 3000);
     } catch (err) {
-      setError(err.response?.data?.message || "An error occurred.");
-      setMessage('');
+      setError(err.response?.data?.message || 'An error occurred.');
     } finally {
       setLoading(false);
     }
@@ -55,6 +51,16 @@ function ResetPassword() {
       {error && <div className="alert alert-danger">{error}</div>}
 
       <form onSubmit={handleReset}>
+        {/* Hidden username field for browser autofill compatibility */}
+        <input
+          type="text"
+          name="username"
+          autoComplete="username"
+          hidden
+          readOnly
+          value="reset-placeholder"
+        />
+
         <div className="mb-3">
           <label htmlFor="newPassword" className="form-label">New Password</label>
           <input
