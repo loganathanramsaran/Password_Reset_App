@@ -16,7 +16,7 @@ function Home() {
 }, []);
 
   return (
-    <div className="home-container text-center  mx-auto mt-4">
+    <div className="home-container text-center  mx-auto mt-5 pt-3">
       <h3 className="headline text-primary">
         {user ? (
           <>
@@ -36,8 +36,8 @@ function Home() {
         <img src="/home.png" alt="Home Icon" className="img-fluid w-25 " />
       </div>
 
-<section className='bg-primary'>        
-      <p className=" text-white mb-0 animate-running ">
+      <section className='bg-primary'>        
+        <p className=" text-white mb-0 animate-running ">
         This is a simple application to demonstrate user authentication and password reset functionality.
         </p>
       </section>

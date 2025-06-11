@@ -12,7 +12,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-primary px-4 py-1">
+    <nav className="navbar navbar-expand-lg bg-primary px-4 py-0 fixed-top">
     <Link className="navbar-brand d-flex align-items-center" to="/">
     <img
       src="/logo.png"

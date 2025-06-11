@@ -23,7 +23,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container text-center">
+    <div className="register-container text-center mt-3">
       <img src='/register.png' alt="Register Illustration" className="img-fluid w-25 h-auto" />
       <h4>Register your Account here!</h4>
       <form className='d-flex flex-column w-100 mx-auto gap-2' onSubmit={handleSubmit}>
