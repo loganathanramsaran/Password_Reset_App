@@ -17,7 +17,7 @@ const Profile = () => {
 
 
   return(
-    <div className='profile-container text-center'>
+    <div className='profile-container text-center mt-5 pt-3'>
       <img src='/profile.png' alt="Profile Illustration" className="img-fluid w-25 h-auto mb-3" />
       <h4 className=''>Your Profile</h4>
       {user ? (
