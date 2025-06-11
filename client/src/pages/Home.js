@@ -20,13 +20,16 @@ function Home() {
       <h3 className="headline text-primary">
         {user ? (
           <>
-            Welcome, <span className="text-info">{user.name}</span>
+            Welcome,{' '}
+            <span className="user-name">
+              { user.name.charAt(0).toUpperCase() + user.name.slice(1)}
+            </span>
          </>
         ) : (
           'Welcome!'
         )}
       </h3>
-      <p className="text-primary">
+      <p className="text-muted">
         Use the navigation links to go to Login, Register, or Profile pages.
       </p>
       <div className="home-image ">
@@ -34,7 +37,7 @@ function Home() {
       </div>
 
 <section className='bg-primary'>        
-      <p className=" text-white fw-semibold mb-0 animate-running ">
+      <p className=" text-white mb-0 animate-running ">
         This is a simple application to demonstrate user authentication and password reset functionality.
         </p>
       </section>

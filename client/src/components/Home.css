@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Savate:ital,wght@0,200..900;1,200..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
 .animate-running {
   display: inline-block;
   white-space: nowrap;
@@ -53,23 +60,34 @@
     color: #fff;
   }
 
-.navbar .navbar-brand {
-  font-family: "Righteous", sans-serif;
+.brand-text {
+  font-family: "Righteous", sans-serif!important;
   font-style: normal;
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.navbar .navbar-brand:hover {
+
+.brand-text:hover {
   color: #000000; /* Change to any hover color you want */
   text-decoration: none;
 }
 
 .headline{
-  font-family: "Savate", sans-serif;
+  font-family: "Savate", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: italic;
-  font-size: 3rem;
+  font-size: 2.5rem;
+}
+.user-name{
+  font-family: "Pacifico", cursive !important;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: darkslategray;
+}
+
+.login-img{
+  width:18%
 }

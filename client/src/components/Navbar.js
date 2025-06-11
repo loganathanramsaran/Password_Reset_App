@@ -12,12 +12,12 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-primary px-4">
+    <nav className="navbar navbar-expand-lg bg-primary px-4 py-1">
     <Link className="navbar-brand d-flex align-items-center" to="/">
     <img
       src="/logo.png"
       alt="Logo"
-      width="40"
+      width="35"
       className="d-inline-block me-1"
     />
     <span className="brand-text">PasswordResetApp</span>
