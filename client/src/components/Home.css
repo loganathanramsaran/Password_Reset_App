@@ -60,8 +60,7 @@
 }
 
 .custom-hover:hover {
-  border-bottom: 2px solid #ffffff;
-  color: #ffe816;
+  border-bottom: 4px solid #ffffff;
 }
 
 /* Default nav-link color */
