@@ -123,7 +123,7 @@ You can test all API endpoints using the Postman collection below:
 ---
 ## 🖼️ Screenshot
 
-![Homepage Screenshot](/homepage.png)
+![Homepage Screenshot](./homepage.png)
 
 
 ---
