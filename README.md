@@ -120,6 +120,10 @@ You can test all API endpoints using the Postman collection below:
 
 🔗 [View in Postman] [https://loganathanc-7436853.postman.co/workspace/Loganathan-C's-Workspace~3f55cebb-894f-406b-8650-cd297ae5e97d/collection/44466576-3a505590-dea0-40c5-b71d-c846c2b9ca39?action=share&creator=44466576]
 
+---
+## 🖼️ Screenshot
+
+![Homepage Screenshot](/homepage.png)
 
 
 ---
