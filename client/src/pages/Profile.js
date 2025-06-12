@@ -7,28 +7,45 @@ const Profile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-  API.get('/users/profile')
-    .then(res => {
-      console.log('👤 Profile response:', res.data); // Inspect this
-      setUser(res.data);
-    })
-    .catch(err => console.error('❌ Error fetching profile:', err));
-}, []);
+    API.get('/users/profile')
+      .then(res => {
+        console.log('👤 Profile response:', res.data);
+        setUser(res.data);
+      })
+      .catch(err => {
+        console.error('❌ Error fetching profile:', err);
+        setUser(null);
+      });
+  }, []);
 
+  return (
+    <div className="container d-flex flex-column align-items-center justify-content-center py-5">
+      <img
+        src="/profile.png"
+        alt="Profile"
+        className="img-fluid mb-4"
+        style={{ maxWidth: '200px' }}
+      />
 
-  return(
-    <div className='profile-container text-center mt-5 pt-3'>
-      <img src='/profile.png' alt="Profile Illustration" className="img-fluid w-25 h-auto mb-3" />
-      <h4 className=''>Your Profile</h4>
+      <h3 className="text-primary mb-3">Your Profile</h3>
+
       {user ? (
-        <div>
-          <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p>
+        <div className="text-center">
+          <p><strong>Name:</strong> {user.name}</p>
+          <p><strong>Email:</strong> {user.email}</p>
         </div>
-  ) : (
-        <p className='text-danger'>You are not Logged in yet!</p>
+      ) : (
+        <div className="alert alert-warning w-100 text-center" style={{ maxWidth: '400px' }}>
+          You are not logged in.
+        </div>
       )}
-      <a href="#" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Go to Home</a>
+
+      <button
+        className="btn btn-outline-primary mt-4"
+        onClick={() => navigate('/')}
+      >
+        ← Back to Home
+      </button>
     </div>
   );
 };

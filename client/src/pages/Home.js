@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../components/Home.css'; // Import custom styles for Home component
+import '../components/Home.css';
 import { useEffect, useState } from 'react';
 import API from '../api/api';
 
@@ -7,55 +7,62 @@ function Home() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-  API.get('/users/profile')
-    .then(res => {
-      console.log('👤 Profile response:', res.data); // Inspect this
-      setUser(res.data);
-    })
-    .catch(err => console.error('❌ Error fetching profile:', err));
-}, []);
+    API.get('/users/profile')
+      .then(res => {
+        console.log('👤 Profile response:', res.data);
+        setUser(res.data);
+      })
+      .catch(err => console.error('❌ Error fetching profile:', err));
+  }, []);
 
   return (
-    <div className="home-container text-center  mx-auto mt-5 pt-3">
-      <h3 className="headline text-primary">
+    <div className="container py-5 text-center">
+      <h3 className="text-primary fw-bold my-3">
         {user ? (
-          <>
-            Welcome,{' '}
-            <span className="user-name">
-              { user.name.charAt(0).toUpperCase() + user.name.slice(1)}
-            </span>
-         </>
+          <>Welcome, <span className="user-name text-capitalize">{user.name}</span></>
         ) : (
           'Welcome!'
         )}
       </h3>
-      <p className="text-muted">
+
+      <p className="text-muted mb-4">
         Use the navigation links to go to Login, Register, or Profile pages.
       </p>
-      <div className="home-image ">
-        <img src="/home.png" alt="Home Icon" className="img-fluid w-25 " />
+
+      <div className="d-flex justify-content-center mb-4">
+        <img
+          src="/home.png"
+          alt="Home Icon"
+          className="img-fluid"
+          style={{ maxWidth: '200px', borderRadius: '16px' }}
+        />
       </div>
 
-      <section className='bg-primary'>        
-        <p className=" text-white mb-0 animate-running ">
-        This is a simple application to demonstrate user authentication and password reset functionality.
+      <div className="bg-primary text-white py-2 px-3 rounded shadow-sm mb-4">
+        <p className="mb-0">
+          This is a simple application to demonstrate user authentication and password reset functionality.
         </p>
-      </section>
-
-      <div className="button-group my-4 d-flex justify-content-center flex-wrap gap-2">
-        <Link to="/login" className="btn btn-sm btn-primary">Go to Login</Link>
-        <Link to="/register" className="btn btn-sm btn-success">Go to Register</Link>
-        <Link to="/profile" className="btn btn-sm btn-danger">Go to Profile</Link>
       </div>
 
-      <p>
-        Check out the source code on{' '}
-        <a href="https://github.com/loganathanramsaran/Password_Reset_App" target="_blank" rel="noopener noreferrer" className="github-link">
+      <div className="d-flex flex-wrap justify-content-center gap-3 mb-4">
+        <Link to="/login" className="btn btn-sm btn-outline-primary">Login</Link>
+        <Link to="/register" className="btn btn-sm btn-outline-success">Register</Link>
+        <Link to="/profile" className="btn btn-sm btn-outline-danger">Profile</Link>
+      </div>
+
+      <p className="mb-1">
+        Source code on{' '}
+        <a
+          href="https://github.com/loganathanramsaran/Password_Reset_App"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-decoration-underline"
+        >
           GitHub
         </a>.
       </p>
 
-      <p className="text-primary">This app is built with React, Node.js, and MongoDB.</p>
+      <p className="text-primary mb-0">Built with React, Node.js, and MongoDB.</p>
       <p className="text-warning">Feel free to contribute or report issues!</p>
     </div>
   );

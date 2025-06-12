@@ -23,21 +23,61 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container text-center mt-3">
-      <img src='/register.png' alt="Register Illustration" className="img-fluid w-25 h-auto" />
-      <h4>Register your Account here!</h4>
-      <form className='d-flex flex-column w-100 mx-auto gap-2' onSubmit={handleSubmit}>
-        <input className='form-control w-50 mx-auto' placeholder="Name" onChange={e => setForm({ ...form, name: e.target.value })} required />
-        <input className='form-control w-50 mx-auto' placeholder="Email" onChange={e => setForm({ ...form, email: e.target.value })} required />
-        <input className='form-control w-50 mx-auto' type="password" placeholder="Password" onChange={e => setForm({ ...form, password: e.target.value })} required />
-        <button className='btn btn-sm btn-success w-25 mx-auto' type="submit">Register</button>
+    <div className="container d-flex flex-column align-items-center justify-content-center py-5">
+      <img src="/register.png" alt="Register" className="img-fluid mb-4" style={{ maxWidth: '200px' }} />
+
+      <h3 className="text-success mb-3">Register Your Account</h3>
+
+      <form onSubmit={handleSubmit} className="w-100" style={{ maxWidth: '400px' }}>
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Name"
+            value={form.name}
+            onChange={e => setForm({ ...form, name: e.target.value })}
+            required
+            autoComplete="name"
+          />
+        </div>
+
+        <div className="mb-3">
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Email"
+            value={form.email}
+            onChange={e => setForm({ ...form, email: e.target.value })}
+            required
+            autoComplete="email"
+          />
+        </div>
+
+        <div className="mb-3">
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Password"
+            value={form.password}
+            onChange={e => setForm({ ...form, password: e.target.value })}
+            required
+            autoComplete="new-password"
+          />
+        </div>
+
+        <button type="submit" className="btn btn-success w-100">Register</button>
       </form>
-      <p className='text-muted mt-4'>Already have an Account?
-        <span className='text-info'>
-          <a href='' onClick={(e) => { e.preventDefault(); navigate('/login'); }}> Login Here</a>
+
+      <p className="text-muted mt-4">
+        Already have an account?{' '}
+        <span className="text-info">
+          <a href="#" onClick={(e) => { e.preventDefault(); navigate('/login'); }}>Login here</a>
         </span>
       </p>
-      <a href='' onClick={(e) => { e.preventDefault(); navigate('/'); }}>Go to Home</a>
+
+      <a href="#" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="text-decoration-none">
+        ← Back to Home
+      </a>
     </div>
   );
 };

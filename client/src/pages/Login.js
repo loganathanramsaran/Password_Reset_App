@@ -9,44 +9,62 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
       const res = await API.post('/users/login', { email, password });
       localStorage.setItem('token', res.data.token);
-
       alert('Login successful!');
       navigate('/profile');
     } catch (err) {
       alert(err.response?.data?.message || 'Login failed');
     }
   };
-  console.log('Login API baseURL:', API.defaults.baseURL);
 
   return (
-    <div className='login-container text-center mt-5 '>
-      <img src='/login.png' alt="Login" className="login-img img-fluid " />
-      <h5>Login your Account here!</h5>
+    <div className="container d-flex flex-column align-items-center justify-content-center py-5">
+      <img
+        src="/login.png"
+        alt="Login"
+        className="img-fluid mb-3"
+        style={{ maxWidth: '200px' }}
+      />
 
-      <form className='d-flex flex-column justify-content-center mt-2' onSubmit={handleLogin}>
-        <input
-          className='form-control w-50 mx-auto'
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        /><br />
-        <input
-          className='form-control w-50 mx-auto'
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        /><br />
-        <button className='btn btn-sm btn-info w-25 mx-auto' type="submit">Login</button>
+      <h4 className="mb-3 text-primary">Login to Your Account</h4>
+
+      <form
+        className="w-100"
+        style={{ maxWidth: '400px' }}
+        onSubmit={handleLogin}
+      >
+        <div className="mb-3">
+          <input
+            className="form-control"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            autoComplete="email"
+          />
+        </div>
+
+        <div className="mb-3">
+          <input
+            className="form-control"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            autoComplete="current-password"
+          />
+        </div>
+
+        <button className="btn btn-info w-100 mb-2" type="submit">
+          Login
+        </button>
+
         <button
-          className='btn btn-sm btn-secondary w-25 mx-auto mt-2'
+          className="btn btn-secondary w-100"
           type="button"
           onClick={() => navigate('/forgot-password')}
         >
@@ -54,14 +72,31 @@ function Login() {
         </button>
       </form>
 
-      <p className='text-muted mt-4'>
-        If you don't have an account, register one here!
-        <span className='text-info'>
-          <a href="#" onClick={(e) => { e.preventDefault(); navigate('/register'); }}> Register New Account</a>
+      <p className="mt-4 text-muted text-center">
+        Don’t have an account?{' '}
+        <span className="text-info">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/register');
+            }}
+          >
+            Register here
+          </a>
         </span>
       </p>
 
-      <a href="#" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Go to Home</a>
+      <a
+        href="#"
+        className="text-decoration-none mt-2"
+        onClick={(e) => {
+          e.preventDefault();
+          navigate('/');
+        }}
+      >
+        ← Back to Home
+      </a>
     </div>
   );
 }

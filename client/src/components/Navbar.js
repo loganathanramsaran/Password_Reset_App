@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Home.css'
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import './Home.css';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -13,17 +13,18 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg bg-primary px-4 py-0 fixed-top">
-    <Link className="navbar-brand d-flex align-items-center" to="/">
-    <img
-      src="/logo.png"
-      alt="Logo"
-      width="35"
-      className="d-inline-block me-1"
-    />
-    <span className="brand-text">PasswordResetApp</span>
-    </Link>
+      <Link className="navbar-brand d-flex align-items-center" to="/">
+        <img
+          src="/logo.png"
+          alt="Logo"
+          width="35"
+          className="d-inline-block me-1"
+        />
+        <span className="brand-text text-white">PasswordResetApp</span>
+      </Link>
+
       <button
-        className="navbar-toggler "
+        className="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
@@ -31,33 +32,42 @@ function Navbar() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon" ></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
 
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ms-auto align-items-center">
           <li className="nav-item">
-            <Link className="nav-link custom-hover" to="/">Home</Link>
+            <NavLink className="nav-link custom-hover text-white" to="/" exact="true">
+              Home
+            </NavLink>
           </li>
+
           {!token && (
             <>
               <li className="nav-item">
-                <Link className="nav-link custom-hover" to="/register">Register</Link>
+                <NavLink className="nav-link custom-hover text-white" to="/register">
+                  Register
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link custom-hover" to="/login">Login</Link>
+                <NavLink className="nav-link custom-hover text-white" to="/login">
+                  Login
+                </NavLink>
               </li>
             </>
           )}
+
           {token && (
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle d-flex align-items-center"
                 href="/#"
+                className="nav-link dropdown-toggle d-flex align-items-center text-white"
                 id="userDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                onClick={(e) => e.preventDefault()} // Prevent scroll-to-top
               >
                 <img
                   src="/profile.png"
@@ -65,6 +75,7 @@ function Navbar() {
                   width="30"
                   height="30"
                   className="rounded-circle me-2"
+                  onError={(e) => (e.currentTarget.src = '/default-avatar.png')}
                 />
                 <span>User</span>
               </a>
